@@ -197,7 +197,7 @@ namespace ControleMedicamentos.Infra.BancoDados.ModuloRequisicao
             int funcionarioId = Convert.ToInt32(leitorRequisicao["FUNCIONARIO_ID"]);
             int pacienteId = Convert.ToInt32(leitorRequisicao["PACIENTE_ID"]);
             int medicamentoId = Convert.ToInt32(leitorRequisicao["MEDICAMENTO_ID"]);
-            int quantidadeMedicamento = Convert.ToInt32(leitorRequisicao["QUANTIDADE_MEDICAMENTO"]);
+            int qtdMedicamento = Convert.ToInt32(leitorRequisicao["QUANTIDADE_MEDICAMENTO"]);
             DateTime data = Convert.ToDateTime(leitorRequisicao["DATA"]);
 
             RepositorioFuncionarioEmBancoDados repositorioFuncionario = new RepositorioFuncionarioEmBancoDados();
@@ -210,7 +210,7 @@ namespace ControleMedicamentos.Infra.BancoDados.ModuloRequisicao
                 Funcionario = repositorioFuncionario.SelecionarPorId(funcionarioId),
                 Paciente = repositorioPaciente.SelecionarPorId(pacienteId),
                 Medicamento = repositorioMedicamento.SelecionarPorId(medicamentoId),
-                QtdMedicamento = quantidadeMedicamento,
+                QtdMedicamento = qtdMedicamento,
                 Data = data,
             };
         }

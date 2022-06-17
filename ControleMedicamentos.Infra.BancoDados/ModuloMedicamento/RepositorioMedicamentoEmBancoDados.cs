@@ -22,7 +22,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
                     [DESCRICAO],
                     [LOTE],
                     [VALIDADE],
-                    [QUANTIDADE_DISPONÍVEL],
+                    [QUANTIDADEDISPONIVEL],
                     [FORNECEDOR_ID]
 	            )
 	            VALUES
@@ -31,7 +31,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
                     @DESCRICAO,
                     @LOTE,
                     @VALIDADE,
-                    @QUANTIDADE_DISPONÍVEL,
+                    @QUANTIDADEDISPONIVEL,
                     @FORNECEDOR_ID
 
 
@@ -44,7 +44,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
 			        [DESCRICAO] = @DESCRICAO,
 			        [LOTE] = @LOTE,
 			        [VALIDADE] = @VALIDADE,
-			        [QUANTIDADE_DISPONÍVEL] = @QUANTIDADE_DISPONÍVEL,
+			        [QUANTIDADEDISPONIVEL] = @QUANTIDADEDISPONIVEL,
 			        [FORNECEDOR_ID] = @FORNECEDOR_ID
 
 
@@ -65,7 +65,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
                     [DESCRICAO],
                     [LOTE],
                     [VALIDADE],
-                    [QUANTIDADE_DISPONÍVEL],
+                    [QUANTIDADEDISPONIVEL],
                     [FORNECEDOR_ID]
 	            FROM 
 		            [TBMEDICAMENTO]
@@ -79,7 +79,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
                     [DESCRICAO],
                     [LOTE],
                     [VALIDADE],
-                    [QUANTIDADE_DISPONÍVEL],
+                    [QUANTIDADEDISPONIVEL],
                     [FORNECEDOR_ID]
 	            FROM 
 		            [TBMEDICAMENTO]";
@@ -189,7 +189,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
             comando.Parameters.AddWithValue("DESCRICAO", medicamento.Descricao);
             comando.Parameters.AddWithValue("LOTE", medicamento.Lote);
             comando.Parameters.AddWithValue("VALIDADE", medicamento.Validade);
-            comando.Parameters.AddWithValue("QUANTIDADE_DISPONÍVEL", medicamento.QuantidadeDisponivel);
+            comando.Parameters.AddWithValue("QUANTIDADEDISPONIVEL", medicamento.QuantidadeDisponivel);
             comando.Parameters.AddWithValue("FORNECEDOR_ID", medicamento.Fornecedor.Id);
         }
         
@@ -200,7 +200,7 @@ namespace ControleMedicamento.Infra.BancoDados.ModuloMedicamento
             string descricao = Convert.ToString(leitorMedicamento["DESCRICAO"]);
             string lote = Convert.ToString(leitorMedicamento["LOTE"]);
             DateTime validade = Convert.ToDateTime(leitorMedicamento["VALIDADE"]);
-            int quantidadeDisponivel = Convert.ToInt32(leitorMedicamento["QUANTIDADE_DISPONÍVEL"]);
+            int quantidadeDisponivel = Convert.ToInt32(leitorMedicamento["QUANTIDADEDISPONIVEL"]);
             int FornecedorId = Convert.ToInt32(leitorMedicamento["FORNECEDOR_ID"]);
             
             RepositorioFornecedorEmBancoDados repositorioFornecedor = new RepositorioFornecedorEmBancoDados();

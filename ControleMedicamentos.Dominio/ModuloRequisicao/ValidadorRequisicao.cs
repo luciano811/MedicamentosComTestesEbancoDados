@@ -9,5 +9,11 @@ namespace ControleMedicamentos.Dominio.ModuloRequisicao
 {
     public class ValidadorRequisicao : AbstractValidator<Requisicao>
     {
+        public ValidadorRequisicao()
+        {
+            RuleFor(x => x.QtdMedicamento)
+                .GreaterThan(0)
+                .WithMessage("Quantidade deve ser maior que 0");
+        }
     }
 }
